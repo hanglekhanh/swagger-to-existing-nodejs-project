@@ -1,10 +1,10 @@
-import express from 'express';
-import Cors from 'cors';
-import bodyParser from 'body-parser';
-import logger from 'morgan';
-import swaggerJSDoc from 'swagger-jsdoc';
-import swaggerUi from 'swagger-ui-express';
-import passport from 'passport';
+const express = require('express');
+const Cors = require('cors');
+const bodyParser = require('body-parser');
+const logger =   require('morgan');
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUi =  require('swagger-ui-express');
+const passport =  require('passport');
 
 const app = express();
 
@@ -50,14 +50,6 @@ app.use(logger('dev'));
 app.use(passport.initialize());
 
 require('./routes/loginUser')(app);
-require('./routes/registerUser')(app);
-require('./routes/forgotPassword')(app);
-require('./routes/resetPassword')(app);
-require('./routes/updatePassword')(app);
-require('./routes/updatePasswordViaEmail')(app);
-require('./routes/findUsers')(app);
-require('./routes/deleteUser')(app);
-require('./routes/updateUser')(app);
 
 // eslint-disable-next-line no-console
 app.listen(API_PORT, () => console.log(`Listening on port ${API_PORT}`));
