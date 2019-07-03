@@ -1,5 +1,2 @@
-**/node_modules/
-docker/data/db/**
-.vscode/
-.idea/
-.env
+backend/node_modules/**
+.idea/**
